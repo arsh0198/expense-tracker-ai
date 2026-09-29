@@ -1,3 +1,9 @@
+## 🚀 Live Demo
+
+👉 [Expense Tracker AI](expense-tracker-ai-phi-kohl.vercel.app)
+
+
+
 # SpendFlow — Modern Personal Expense Tracker
 
 A modern, intuitive, and production-ready Expense Tracking application built with **Next.js 14 App Router**, **TypeScript**, **Tailwind CSS**, **Recharts**, and **Lucide React**.
