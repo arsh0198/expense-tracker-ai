@@ -1,6 +1,6 @@
 ## 🚀 Live Demo
 
-👉 [Expense Tracker AI](expense-tracker-ai-phi-kohl.vercel.app)
+[**Open Expense Tracker AI →**](https://expense-tracker-ai-phi-kohl.vercel.app/)
 
 
 
