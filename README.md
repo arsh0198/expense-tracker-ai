@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SpendFlow — Modern Personal Expense Tracker
+
+A modern, intuitive, and production-ready Expense Tracking application built with **Next.js 14 App Router**, **TypeScript**, **Tailwind CSS**, **Recharts**, and **Lucide React**.
+
+---
+
+## Features
+
+### 1. Expense Management
+- **Add & Edit Expenses**: Modal form with real-time validation (Amount > $0, Description required, Category selection, Date picker, Optional notes).
+- **Delete with Confirmation**: Safeguarded deletion modal displaying the transaction details before permanent removal.
+- **Customizable Categories**:
+  - 🍕 **Food & Dining** (Amber/Orange)
+  - 🚗 **Transportation** (Blue)
+  - 🎬 **Entertainment** (Purple)
+  - 🛍️ **Shopping** (Pink)
+  - 🧾 **Bills & Utilities** (Emerald)
+  - 📦 **Other** (Slate)
+
+### 2. Interactive Analytics Dashboard
+- **Summary KPI Cards**:
+  - **Total Spending**: Aggregated amount across all transactions.
+  - **This Month's Spending**: Month-to-date spending with a Month-over-Month (% increase/decrease) badge.
+  - **Top Spending Category**: Highlights the highest spending category with proportion and total amount.
+  - **Average Transaction**: Average amount spent per transaction along with highest single transaction.
+- **Category Spending Donut Chart**: Interactive Recharts donut visualization with custom tooltips, center total label, and interactive legend list.
+- **6-Month Spending History Bar Chart**: Recharts bar chart showing monthly trends over the past half-year.
+
+### 3. Powerful Filtering & Sorting
+- **Real-time Search**: Search across descriptions, notes, and category names.
+- **Category Filter Pills**: Filter instantly by clicking any category badge or "All Categories".
+- **Date Range Presets**:
+  - All Time
+  - This Month
+  - Last Month
+  - Last 30 Days
+  - This Year
+  - Custom Date Range (interactive Start & End date pickers)
+- **Sorting Options**:
+  - Newest First
+  - Oldest First
+  - Highest Amount
+  - Lowest Amount
+  - Description (A-Z)
+- **Active Filter Counter & Quick Reset**: See exactly how many records match your criteria with a 1-click Reset button.
+
+### 4. Data Persistence & Export
+- **Local Persistence**: Stores data safely in browser `localStorage`. No accounts or server setup required; 100% private.
+- **Rich Seed Data**: Automatically preloaded with realistic sample data across recent dates so the dashboard is immediately interactive upon first launch.
+- **Export to CSV**: Export all transactions or currently filtered transactions into standard formatted `.csv` files.
+- **Export JSON**: Full machine-readable backup.
+- **Data Controls**: "Reset to Demo Data" and "Clear All Data" options in the navigation bar.
+- **Feedback & Notifications**: Instant toast alerts for adding, updating, deleting, exporting, and resetting data.
+
+---
+
+## Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Visualizations**: [Recharts](https://recharts.org/)
+- **State Management**: React Context API (`ExpenseContext`, `ToastContext`) + `localStorage`
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18.17+ or higher
+- npm (or yarn / pnpm)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Running the Application
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Install Dependencies** (if not already installed):
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Run in Development Mode**:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Build and Run in Production Mode**:
+   ```bash
+   npm run build
+   npm run start
+   ```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Testing Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Add an Expense**: Click `+ Add Expense` in the navigation or hero banner. Fill in the amount, description, category, and date. Submit and observe the instant toast feedback and dashboard update.
+2. **Filter & Search**:
+   - Type in the search box to filter by text.
+   - Click category buttons (e.g. "Food") to isolate spending.
+   - Select "Last 30 Days" or "Custom" from the date dropdown.
+3. **Edit / Delete**:
+   - Click the pencil icon on any transaction to edit it.
+   - Click the trash icon to open the confirmation dialog.
+4. **Export CSV**:
+   - Click the `Export` dropdown in the top navbar and choose `Export All (CSV)` or `Export Filtered (CSV)`. Check the downloaded CSV file.
+5. **Reset & Clear**:
+   - Click the `Data` dropdown in the navbar and select `Reset to Demo Data` or `Clear All Data`.
